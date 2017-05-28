@@ -1,0 +1,8 @@
+C:\Users\DDD\Documents\Visual Studio 2012\Projects\Program\bin\Debug\ImageToASCIIconverter.exe
+C:\Users\DDD\Documents\Visual Studio 2012\Projects\Program\bin\Debug\ImageToASCIIconverter.pdb
+C:\Users\DDD\Documents\Visual Studio 2012\Projects\Program\obj\Debug\ImageToASCIIconverter.csprojResolveAssemblyReference.cache
+C:\Users\DDD\Documents\Visual Studio 2012\Projects\Program\obj\Debug\ImageToASCIIconverter.Form1.resources
+C:\Users\DDD\Documents\Visual Studio 2012\Projects\Program\obj\Debug\ImageToASCIIconverter.Properties.Resources.resources
+C:\Users\DDD\Documents\Visual Studio 2012\Projects\Program\obj\Debug\ImageToASCIIconverter.csproj.GenerateResource.Cache
+C:\Users\DDD\Documents\Visual Studio 2012\Projects\Program\obj\Debug\ImageToASCIIconverter.exe
+C:\Users\DDD\Documents\Visual Studio 2012\Projects\Program\obj\Debug\ImageToASCIIconverter.pdb
