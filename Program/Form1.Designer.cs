@@ -29,14 +29,15 @@ namespace ImageToASCIIconverter {
             this.browserMain = new System.Windows.Forms.WebBrowser();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.trackBar = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConvertToAscii
             // 
-            this.btnConvertToAscii.Location = new System.Drawing.Point(473, 27);
+            this.btnConvertToAscii.Location = new System.Drawing.Point(310, 92);
             this.btnConvertToAscii.Name = "btnConvertToAscii";
-            this.btnConvertToAscii.Size = new System.Drawing.Size(88, 23);
+            this.btnConvertToAscii.Size = new System.Drawing.Size(96, 23);
             this.btnConvertToAscii.TabIndex = 3;
             this.btnConvertToAscii.Text = "Конвертувати";
             this.btnConvertToAscii.UseVisualStyleBackColor = true;
@@ -44,9 +45,9 @@ namespace ImageToASCIIconverter {
             // 
             // btnBrowse
             // 
-            this.btnBrowse.Location = new System.Drawing.Point(372, 27);
+            this.btnBrowse.Location = new System.Drawing.Point(310, 10);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(94, 23);
+            this.btnBrowse.Size = new System.Drawing.Size(96, 23);
             this.btnBrowse.TabIndex = 5;
             this.btnBrowse.Text = "Відкрити файл";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -54,51 +55,61 @@ namespace ImageToASCIIconverter {
             // 
             // txtPath
             // 
-            this.txtPath.Location = new System.Drawing.Point(74, 27);
+            this.txtPath.Location = new System.Drawing.Point(12, 12);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(292, 20);
+            this.txtPath.Size = new System.Drawing.Size(292, 22);
             this.txtPath.TabIndex = 6;
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // browserMain
             // 
             this.browserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.browserMain.Location = new System.Drawing.Point(58, 70);
+            this.browserMain.Location = new System.Drawing.Point(12, 140);
             this.browserMain.MinimumSize = new System.Drawing.Size(20, 20);
             this.browserMain.Name = "browserMain";
-            this.browserMain.Size = new System.Drawing.Size(543, 220);
+            this.browserMain.Size = new System.Drawing.Size(392, 392);
             this.browserMain.TabIndex = 7;
             // 
             // trackBar
             // 
-            this.trackBar.Location = new System.Drawing.Point(12, 73);
+            this.trackBar.Location = new System.Drawing.Point(137, 41);
             this.trackBar.Maximum = 400;
             this.trackBar.Minimum = 1;
             this.trackBar.Name = "trackBar";
-            this.trackBar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar.Size = new System.Drawing.Size(45, 214);
+            this.trackBar.Size = new System.Drawing.Size(269, 45);
             this.trackBar.TabIndex = 9;
             this.trackBar.TickFrequency = 20;
             this.trackBar.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.trackBar.Value = 100;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 55);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 13);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Якість конвертування";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(629, 322);
+            this.ClientSize = new System.Drawing.Size(418, 544);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.trackBar);
             this.Controls.Add(this.browserMain);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.btnConvertToAscii);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "PictureToASCII";
@@ -118,6 +129,7 @@ namespace ImageToASCIIconverter {
         private System.Windows.Forms.WebBrowser browserMain;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.TrackBar trackBar;
+        private System.Windows.Forms.Label label1;
     }
 }
 

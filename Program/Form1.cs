@@ -20,18 +20,16 @@ namespace ImageToASCIIconverter {
 
         private void btnConvertToAscii_Click(object sender, EventArgs e) {
             btnConvertToAscii.Enabled = false;     
-            //Load the Image from the specified path
+            // Загрузить картинку по пути
             Bitmap image = new Bitmap(txtPath.Text, true);            
-            //Resize the image...
-            //I've used a trackBar to emulate Zoom In / Zoom Out feature
-            //This value sets the WIDTH, number of characters, of the text image
-            image = GetReSizedImage(image,this.trackBar.Value);           
-            //Convert the resized image into ASCII
+            // Изменить размер изображения, пропорциально ширене, согласно ползунку "качества"
+            image = GetReSizedImage(image, trackBar.Value);           
+            // Конвертация изображения в ASCII
             _Content = ConvertToAscii(image);
 
-            //Enclose the final string between <pre> tags to preserve its formatting
-            //and load it in the browser control
-            browserMain.DocumentText = "<pre>" + "<Font size=0>" + _Content + "</Font></pre>";               
+            int fontSize =  (400 - trackBar.Value) / 4;
+            // Заключим наше текстовое представление в тег <pre>, чтобы сохранить форматирование
+            browserMain.DocumentText = "<pre style=\"font-size: " + fontSize + "%\">" + _Content + "</pre>";               
             btnConvertToAscii.Enabled = true;
         }
 
@@ -54,7 +52,7 @@ namespace ImageToASCIIconverter {
                     }
                 }
                 if (!toggle) {
-                    sb.Append("<BR>");
+                    sb.Append("<br>");
                     toggle = true;
                 } else {
                     toggle = false;
@@ -106,6 +104,11 @@ namespace ImageToASCIIconverter {
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
         }
