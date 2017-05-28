@@ -15,15 +15,15 @@ namespace ImageToASCIIconverter {
 
         private void btnConvertToAscii_Click(object sender, EventArgs e) {
             btnConvertToAscii.Enabled = false;     
-            // Загрузить картинку по пути
+            // Р—Р°РіСЂСѓР·РёС‚СЊ РєР°СЂС‚РёРЅРєСѓ РїРѕ РїСѓС‚Рё
             Bitmap image = new Bitmap(txtPath.Text, true);            
-            // Изменить размер изображения, пропорциально ширене, согласно ползунку "качества"
+            // РР·РјРµРЅРёС‚СЊ СЂР°Р·РјРµСЂ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ, РїСЂРѕРїРѕСЂС†РёР°Р»СЊРЅРѕ С€РёСЂРµРЅРµ, СЃРѕРіР»Р°СЃРЅРѕ РїРѕР»Р·СѓРЅРєСѓ "РєР°С‡РµСЃС‚РІР°"
             image = GetReSizedImage(image, trackBar.Value);           
-            // Конвертация изображения в ASCII
+            // РљРѕРЅРІРµСЂС‚Р°С†РёСЏ РёР·РѕР±СЂР°Р¶РµРЅРёСЏ РІ ASCII
             _html = ConvertToAscii(image);
 
             int fontSize = Math.Max((trackBar.Maximum - trackBar.Value) / 32, 4);
-            // Заключим наше текстовое представление в тег <pre>, чтобы сохранить форматирование
+            // Р—Р°РєР»СЋС‡РёРј РЅР°С€Рµ С‚РµРєСЃС‚РѕРІРѕРµ РїСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ РІ С‚РµРі <pre>, С‡С‚РѕР±С‹ СЃРѕС…СЂР°РЅРёС‚СЊ С„РѕСЂРјР°С‚РёСЂРѕРІР°РЅРёРµ
             _html = "<pre style=\"font-size: " + fontSize + "px\">" + _html + "</pre>";
 
             browserMain.DocumentText = _html;               
@@ -37,7 +37,7 @@ namespace ImageToASCIIconverter {
             for (int h = 0; h < image.Height; h++) {
                 for (int w = 0; w < image.Width; w++) {
                     Color pixelColor = image.GetPixel(w, h);
-                    // Среднее значение из RGB чтобы найти серый цвет
+                    // РЎСЂРµРґРЅРµРµ Р·РЅР°С‡РµРЅРёРµ РёР· RGB С‡С‚РѕР±С‹ РЅР°Р№С‚Рё СЃРµСЂС‹Р№ С†РІРµС‚
                     int gray = (pixelColor.R + pixelColor.G + pixelColor.B) / 3;
                     Color grayColor = Color.FromArgb(gray, gray, gray);
                     // Use the toggle flag to minimize height-wise stretch
@@ -57,10 +57,10 @@ namespace ImageToASCIIconverter {
         }
 
         private Bitmap GetReSizedImage(Bitmap inputBitmap, int asciiWidth) {            
-            // Вычесление новой высоты, пропорционально измененной ширене
+            // Р’С‹С‡РµСЃР»РµРЅРёРµ РЅРѕРІРѕР№ РІС‹СЃРѕС‚С‹, РїСЂРѕРїРѕСЂС†РёРѕРЅР°Р»СЊРЅРѕ РёР·РјРµРЅРµРЅРЅРѕР№ С€РёСЂРµРЅРµ
             int asciiHeight = (int)Math.Ceiling((double)inputBitmap.Height * asciiWidth / inputBitmap.Width);
 
-            // Создание нового Bitmap изображения и качества интерполяции
+            // РЎРѕР·РґР°РЅРёРµ РЅРѕРІРѕРіРѕ Bitmap РёР·РѕР±СЂР°Р¶РµРЅРёСЏ Рё РєР°С‡РµСЃС‚РІР° РёРЅС‚РµСЂРїРѕР»СЏС†РёРё
             Bitmap result = new Bitmap(asciiWidth, asciiHeight);
             Graphics g = Graphics.FromImage((Image)result);
             g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
