@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageToASCIIconverter", "ImageToASCIIconverter.csproj", "{1650F96F-2B17-46A4-AD87-BE09D1C68808}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PictureToASCII", "PictureToASCII.csproj", "{1650F96F-2B17-46A4-AD87-BE09D1C68808}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

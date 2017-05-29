@@ -14,3 +14,5 @@ C:\Users\snosm\Source\Repos\gdik\Program\obj\Debug\ImageToASCIIconverter.Propert
 C:\Users\snosm\Source\Repos\gdik\Program\obj\Debug\ImageToASCIIconverter.csproj.GenerateResource.Cache
 C:\Users\snosm\Source\Repos\gdik\Program\obj\Debug\ImageToASCIIconverter.exe
 C:\Users\snosm\Source\Repos\gdik\Program\obj\Debug\ImageToASCIIconverter.pdb
+C:\Users\DDD\Documents\Visual Studio 2012\Projects\gdik-master\Program\obj\Debug\ImageToASCIIconverter.exe
+C:\Users\DDD\Documents\Visual Studio 2012\Projects\gdik-master\Program\obj\Debug\ImageToASCIIconverter.pdb

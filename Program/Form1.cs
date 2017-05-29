@@ -4,7 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 
-namespace ImageToASCIIconverter {
+namespace PictureToASCII {
     public partial class Form1 : Form {
         public Form1() {
             InitializeComponent();
@@ -15,18 +15,18 @@ namespace ImageToASCIIconverter {
 
         private void btnConvertToAscii_Click(object sender, EventArgs e) {
             btnConvertToAscii.Enabled = false;     
-            // Загрузить картинку по пути
+            // завантаження зображення
             Bitmap image = new Bitmap(txtPath.Text, true);            
-            // Изменить размер изображения, пропорциально ширене, согласно ползунку "качества"
-            image = GetReSizedImage(image, trackBar.Value);           
-            // Конвертация изображения в ASCII
+            // зміна розміру зображення, пропорціонально ширині, узгоджуючи з якістю конвертування
+            image = GetReSizedImage(image, slider.Value);
+            // конвертування зображення в ASCII
             _html = ConvertToAscii(image);
 
-            int fontSize = Math.Max((trackBar.Maximum - trackBar.Value) / 32, 4);
+            int fontSize = Math.Max((slider.Maximum - slider.Value) / 32, 4);
             // Заключим наше текстовое представление в тег <pre>, чтобы сохранить форматирование
             _html = "<pre style=\"font-size: " + fontSize + "px\">" + _html + "</pre>";
 
-            browserMain.DocumentText = _html;               
+            ResultWindow.DocumentText = _html;               
             btnConvertToAscii.Enabled = true;
         }
 
@@ -37,7 +37,7 @@ namespace ImageToASCIIconverter {
             for (int h = 0; h < image.Height; h++) {
                 for (int w = 0; w < image.Width; w++) {
                     Color pixelColor = image.GetPixel(w, h);
-                    // Среднее значение из RGB чтобы найти серый цвет
+                    // середнє значення з RGB для знаходження сірого кольору
                     int gray = (pixelColor.R + pixelColor.G + pixelColor.B) / 3;
                     Color grayColor = Color.FromArgb(gray, gray, gray);
                     // Use the toggle flag to minimize height-wise stretch
@@ -57,10 +57,10 @@ namespace ImageToASCIIconverter {
         }
 
         private Bitmap GetReSizedImage(Bitmap inputBitmap, int asciiWidth) {            
-            // Вычесление новой высоты, пропорционально измененной ширене
+            // обчислення нової висоти, пропорціонально до зміненої ширини
             int asciiHeight = (int)Math.Ceiling((double)inputBitmap.Height * asciiWidth / inputBitmap.Width);
 
-            // Создание нового Bitmap изображения и качества интерполяции
+            // створення нового Bitmap зображення
             Bitmap result = new Bitmap(asciiWidth, asciiHeight);
             Graphics g = Graphics.FromImage((Image)result);
             g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
@@ -80,7 +80,7 @@ namespace ImageToASCIIconverter {
             saveFileDialog1.Filter = "HTML files (*.html)|*.html";
             DialogResult diag = saveFileDialog1.ShowDialog();
             if (diag == DialogResult.OK) {
-                //Replace all HTML spaces to standard spaces
+                //заміна всіх HTML пробілів стандартними
                 _html = _html.Replace("&nbsp;", " ").Replace("<br>","\r\n");
                 StreamWriter sw = new StreamWriter(saveFileDialog1.FileName);
                 sw.Write(_html);

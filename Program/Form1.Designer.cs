@@ -1,13 +1,7 @@
-namespace ImageToASCIIconverter {
+namespace PictureToASCII {
     partial class Form1 {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+
         protected override void Dispose(bool disposing) {
             if (disposing && (components != null)) {
                 components.Dispose();
@@ -16,25 +10,21 @@ namespace ImageToASCIIconverter {
         }
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnConvertToAscii = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.browserMain = new System.Windows.Forms.WebBrowser();
+            this.ResultWindow = new System.Windows.Forms.WebBrowser();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.trackBar = new System.Windows.Forms.TrackBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar)).BeginInit();
+            this.slider = new System.Windows.Forms.TrackBar();
+            this.QualityLabel = new System.Windows.Forms.Label();
+            this.ExportToHtml = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.slider)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnConvertToAscii
+            // btnConvertToAscii (" онвертац≥€")
             // 
             this.btnConvertToAscii.Location = new System.Drawing.Point(12, 92);
             this.btnConvertToAscii.Name = "btnConvertToAscii";
@@ -44,7 +34,7 @@ namespace ImageToASCIIconverter {
             this.btnConvertToAscii.UseVisualStyleBackColor = true;
             this.btnConvertToAscii.Click += new System.EventHandler(this.btnConvertToAscii_Click);
             // 
-            // btnBrowse
+            // btnBrowse ("¬≥дкрити файл")
             // 
             this.btnBrowse.Location = new System.Drawing.Point(310, 10);
             this.btnBrowse.Name = "btnBrowse";
@@ -54,7 +44,7 @@ namespace ImageToASCIIconverter {
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
-            // txtPath
+            // txtPath (Ўл€х до файлу)
             // 
             this.txtPath.Location = new System.Drawing.Point(12, 12);
             this.txtPath.Name = "txtPath";
@@ -65,60 +55,60 @@ namespace ImageToASCIIconverter {
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // browserMain
+            // ResultWindow (конвертоване зображенн€)
             // 
-            this.browserMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ResultWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.browserMain.Location = new System.Drawing.Point(12, 140);
-            this.browserMain.MinimumSize = new System.Drawing.Size(20, 20);
-            this.browserMain.Name = "browserMain";
-            this.browserMain.Size = new System.Drawing.Size(392, 392);
-            this.browserMain.TabIndex = 7;
+            this.ResultWindow.Location = new System.Drawing.Point(12, 140);
+            this.ResultWindow.MinimumSize = new System.Drawing.Size(20, 20);
+            this.ResultWindow.Name = "ResultWindow";
+            this.ResultWindow.Size = new System.Drawing.Size(392, 392);
+            this.ResultWindow.TabIndex = 7;
             // 
-            // trackBar
+            // slider (слайдер €кост≥)
             // 
-            this.trackBar.LargeChange = 100;
-            this.trackBar.Location = new System.Drawing.Point(137, 41);
-            this.trackBar.Maximum = 700;
-            this.trackBar.Minimum = 100;
-            this.trackBar.Name = "trackBar";
-            this.trackBar.Size = new System.Drawing.Size(269, 45);
-            this.trackBar.SmallChange = 100;
-            this.trackBar.TabIndex = 9;
-            this.trackBar.TickFrequency = 100;
-            this.trackBar.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
-            this.trackBar.Value = 100;
+            this.slider.LargeChange = 100;
+            this.slider.Location = new System.Drawing.Point(137, 41);
+            this.slider.Maximum = 700;
+            this.slider.Minimum = 100;
+            this.slider.Name = "slider";
+            this.slider.Size = new System.Drawing.Size(269, 45);
+            this.slider.SmallChange = 100;
+            this.slider.TabIndex = 9;
+            this.slider.TickFrequency = 100;
+            this.slider.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.slider.Value = 100;
             // 
-            // label1
+            // QualityLabel ("як≥сть конвертуванн€")
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(123, 13);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "як≥сть конвертуванн€";
+            this.QualityLabel.AutoSize = true;
+            this.QualityLabel.Location = new System.Drawing.Point(9, 55);
+            this.QualityLabel.Name = "QualityLabel";
+            this.QualityLabel.Size = new System.Drawing.Size(123, 13);
+            this.QualityLabel.TabIndex = 10;
+            this.QualityLabel.Text = "як≥сть конвертуванн€";
             // 
-            // saveAsToolStripMenuItem
+            // ExportToHtml ("≈кспортувати в HTML")
             // 
-            this.saveAsToolStripMenuItem.Location = new System.Drawing.Point(266, 92);
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(140, 23);
-            this.saveAsToolStripMenuItem.TabIndex = 11;
-            this.saveAsToolStripMenuItem.Text = "≈кспортувати в HTML";
-            this.saveAsToolStripMenuItem.UseVisualStyleBackColor = true;
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            this.ExportToHtml.Location = new System.Drawing.Point(266, 92);
+            this.ExportToHtml.Name = "ExportToHtml";
+            this.ExportToHtml.Size = new System.Drawing.Size(140, 23);
+            this.ExportToHtml.TabIndex = 11;
+            this.ExportToHtml.Text = "≈кспортувати в HTML";
+            this.ExportToHtml.UseVisualStyleBackColor = true;
+            this.ExportToHtml.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
-            // Form1
+            // Form1 (√оловна форма)
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(418, 544);
-            this.Controls.Add(this.saveAsToolStripMenuItem);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.trackBar);
-            this.Controls.Add(this.browserMain);
+            this.Controls.Add(this.ExportToHtml);
+            this.Controls.Add(this.QualityLabel);
+            this.Controls.Add(this.slider);
+            this.Controls.Add(this.ResultWindow);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.btnConvertToAscii);
@@ -126,7 +116,7 @@ namespace ImageToASCIIconverter {
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "PictureToASCII";
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.slider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,11 +128,11 @@ namespace ImageToASCIIconverter {
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.WebBrowser browserMain;
+        private System.Windows.Forms.WebBrowser ResultWindow;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.TrackBar trackBar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button saveAsToolStripMenuItem;
+        private System.Windows.Forms.TrackBar slider;
+        private System.Windows.Forms.Label QualityLabel;
+        private System.Windows.Forms.Button ExportToHtml;
     }
 }
 
